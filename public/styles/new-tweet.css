@@ -1,0 +1,30 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+button {
+    background-color: #4056a1;
+    color: #ffffff;
+    border: none;
+}
+
+.new-tweet {
+    width: 100%;
+    margin-top: 50px;
+}
+
+form div {
+    font-family: "Bungee", sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+textarea {
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 2px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

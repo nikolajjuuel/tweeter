@@ -22,7 +22,7 @@ body {
 
 }
 
-body h1,h2,h3,h4,p{
+body h1,h2,h3,h4,p,label,textarea{
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
 }
@@ -34,10 +34,12 @@ body h1,h2,h3,h4,p{
  /* Font Family Rules */
 
  main {
-   width: 90%;
    display: flex;
    justify-content: center;
    align-items: center;
-   flex-direction: column;
+   margin-right: 5%;
+   margin-left: 5%;
+
  }
+ 
 
