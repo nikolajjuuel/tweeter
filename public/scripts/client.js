@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     const loadTweets = () => {
         $.ajax({
             url: '/tweets',
@@ -18,34 +17,25 @@ $(document).ready(function () {
 
     loadTweets();
 
-
+    //creates and prepends data onto index page
     const createTweetElement = function (obj) {
-        const $location = $('#tweets-container');
-        const $header = $(`<header> <div> <p><img src="${obj.user.avatars}" alt=""> ${obj.user.name}</p><p class="handle">${obj.user.handle}</p></div></header>`);
-        const $div = $('<div>');
+        const formattedDate = timeago.format(obj.created_at);
 
-        const $formattedDate = timeago.format(obj.created_at);
-        
-        const $footer = $(`<footer><div class="date need_to_be_rendered" datetime="1633639091411">${$formattedDate}</div><div class="logos"><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i> </div></footer>`)
-
-
-        //const $footer = $('<footer>');
+        const $createLocation = $('#tweets-container');
         const $article = $('<article>');
-       // const $logos = $(`<div class="logos"><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i> </div>`)
-       // const $date = $(`<div class="date need_to_be_rendered" datetime="${obj.created_at}">${$formattedDate}</div>`);
-       // console.log('DATE',$date);
+        const $header = $(`<header> <div> <p><img src="${obj.user.avatars}" alt=""> ${obj.user.name}</p><p class="handle">${obj.user.handle}</p></div></header>`);
+        const $content = $(`<div><p>${obj.content.text}</p></div>`);
+        const $footer = $(`<footer><div class="date need_to_be_rendered" datetime="1633639091411">${formattedDate}</div><div class="logos"><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></div></footer>`)
 
-        const $content = $(`<p>${obj.content.text}</p>`);
-        const $tweetInfo = $div.append($content);
-        //const $footerInfo = $footer.append($date, $logos);
-        const $articles = $article.append($header, $tweetInfo, $footer);
+        const $articles = $article.append($header, $content, $footer);
+        const $elementCreate = $createLocation.prepend($articles);
 
-        const $complete = $location.prepend($articles);
-        return $complete;
+        return $elementCreate;
     };
 
 
     const renderTweets = function (tweets) {
+        //stops data from being dublicated
         $('#tweets-container').empty();
 
         for (const tweet in tweets) {
@@ -54,13 +44,10 @@ $(document).ready(function () {
     }
 
     const $form = $('#new-tweet');
-
-
-
     $form.on('submit', function (e) {
         e.preventDefault();
 
-
+        //jquery validator rules and messages
         $('#new-tweet').validate({
             rules: {
                 text: {
@@ -75,18 +62,15 @@ $(document).ready(function () {
                     minlength: 'Please insert your thought above',
                     maxlength: 'This hum is too long, please shorten it!'
                 },
-                
-            },
-            submitHandler: function (form) {   
-                console.log('form',form); 
-                console.log()
 
+            },
+            submitHandler: function (form) {
                 const serializedData = $(form).serialize();
-                $.post('/tweets', serializedData).then(loadTweets).then($('#tweet-text').val(''),console.log('test'));
+                $.post('/tweets', serializedData).then(loadTweets).then($('#tweet-text').val(''), console.log('test'));
             }
         });
 
-        
+
     });
 
 })
