@@ -15,9 +15,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300;600&display=swap"
     rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  
+
+
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
@@ -38,9 +38,6 @@
   <nav>
     <span>tweeter</span>
 
-
-
-
     <div class="tweet">
       Write a new tweet
       <i class="fas fa-angle-double-down"></i>
@@ -58,46 +55,24 @@
     </div>
   </header>
 
+    <main class="container">
+      <section class="new-tweet">
+        <!-- method="POST" action="/tweets"  not needed for ajax-->
+        <form id="new-tweet">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">TWEET</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+    </main>
 
-  <main class="container">
-    <section class="new-tweet">
-      <!-- method="POST" action="/tweets"  not needed for ajax-->
-      <form  id="new-tweet">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
-        <div>
-          <button type="submit">TWEET</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
-  </main>
-
-  <article>
-    <header>
-      <div>
-        <p><img src="https://i.imgur.com/73hZDYK.png" alt=""> Johansen</p>
-        <p class="handle">@NikolajJuuel</p>
-      </div>
-    </header>
-
-    <div>
-      <p> this is the content of the tweet </p>
-    </div>
-
-    <footer>
-      <div class="date">1 days ago</div>
-      <div class="logos">
-        <i class="fas fa-flag"></i>
-        <i class="fas fa-retweet"></i>
-        <i class="fas fa-heart"></i> 
-      </div>
-
-    </footer>
-  </article>
-  <div id="tweets-container"></div>
-
-
-</body>
+    <div id="tweets-container"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  </body>
 
 </html>
