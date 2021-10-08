@@ -22,7 +22,7 @@ body {
 
 }
 
-body h1,h2,h3,h4,p,label,textarea{
+body h1,h2,h3,h4,p,label,textarea, div{
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
   overflow-wrap: break-word;

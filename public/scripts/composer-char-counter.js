@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     const tweetText = document.getElementById("tweet-text");
 
     tweetText.addEventListener("input", function () {
@@ -17,7 +16,5 @@ $(document).ready(function () {
             styleChange.classList.remove('red');
         }
     });
-
-
 
 });

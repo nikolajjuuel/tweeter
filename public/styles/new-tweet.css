@@ -1,3 +1,13 @@
+article div p img {
+    height: 32px;
+    margin-right: 10px;
+}
+
+header div p {
+    display: flex;
+    align-items: center;
+}
+
 form {
     display: flex;
     flex-direction: column;
