@@ -2,14 +2,17 @@
 
 A single-page AJAX-based Twitter clone that uses jQuery, HTML5, and plain ol' CSS3 for styling. 
 
-It is equiped with media quiries to ensure that the page is responsive on both desktops and mobile devices. Animations on the page are achieved with CSS transitions, Keyframes, and jQueries animation functions.
+It is equiped with media quiries to ensure it is responsive on both desktops and mobile devices. Animations on the page are achieved with CSS transitions, Keyframes, and jQueries animation functions.
 
 ## Final Product
 
-!["Main create an account page"](docs/create-account.png)
-!["List of shortned urls that can be modified or deleted"](docs/generated-short-urls.png)
-!["image of how to modify existing short url"](docs/edit-or-modify-url.png)
-!["Preview of short url redirecting to designated site"](docs/short-url-redirecting.png)
+!["Main desktop page"](docs/desktop-display.png)
+Desktop display
+!["Main mobile display and write a tweet button"](docs/mobile-button.png) 
+Mobile display and write a tweet button
+
+!["Preview of short url redirecting to designated site"](docs/error-message.png)
+Error message if tweet is too long. 
 
 ## Getting Started
 
