@@ -17,8 +17,6 @@ article header div p {
 article{
     border: solid 2px black;
     padding: 20px;
-    margin-left: 5%;
-    margin-right: 5%;
     margin-top: 5%;
     transition: .2s;
 
@@ -28,6 +26,7 @@ article header{
     background-image: none;
     padding-top: 0px;
     height: 50px;
+    width: 100%;;
 }
 
 article header div{

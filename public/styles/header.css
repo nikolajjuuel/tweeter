@@ -5,14 +5,26 @@ header {
     background-color: #d89923;
     background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 header div {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 header span{
     font-weight: 600;;
 }
+
+
+@media only screen and (min-width: 768px) {
+    header {
+        width: 40%;
+    }
+  }
