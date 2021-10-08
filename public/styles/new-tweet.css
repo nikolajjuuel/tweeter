@@ -14,17 +14,6 @@ form {
     width: 100%;
 }
 
-button {
-    background-color: #4056a1;
-    color: #ffffff;
-    border: none;
-}
-
-.new-tweet {
-    width: 100%;
-    margin-top: 50px;
-}
-
 form div {
     font-family: "Bungee", sans-serif;
     display: flex;
@@ -39,12 +28,19 @@ textarea {
     margin-bottom: 20px;
 }
 
-.red {
-    color: firebrick;
+button {
+    background-color: #4056a1;
+    color: #ffffff;
+    border: none;
 }
 
-.active{
-    visibility: hidden;
+.new-tweet {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.red {
+    color: firebrick;
 }
 
 @media only screen and (min-width: 768px) {

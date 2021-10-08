@@ -1,17 +1,10 @@
 i {
     color: red;
-
-
 }
 
-i:hover{
+i:hover {
     animation-duration: 2s;
     animation-iteration-count: infinite;
-}
-
-.fa-angle-double-down {
-    display: flex;
-    justify-content: center;
 }
 
 nav {
@@ -29,36 +22,45 @@ nav span {
     font-family: "Bungee", sans-serif;
 }
 
+.fa-angle-double-down {
+    display: flex;
+    justify-content: center;
+}
+
 .tweet {
     color: #ffffff;
     cursor: pointer;
 }
 
-@media only screen and (min-width: 768px) {
-    nav{
-        color: #ffffff;;
-        background-color: #4056a1;
+.bounce {
+    animation-name: bounce;
+    animation-timing-function: linear;
+}
 
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    nav {
+        color: #ffffff;
+        background-color: #4056a1;
     }
     .main {
         display: flex;
     }
 
-
-    .flex{
+    .flex {
         display: flex;
         padding-top: 200px;
         padding-left: 5%;
     }
-  }
-
-
-.bounce {
-    animation-name: bounce;
-    animation-timing-function: linear;
-}
-@keyframes bounce {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(5px); }
-    100% { transform: translateY(0); }
 }

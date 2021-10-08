@@ -1,11 +1,10 @@
-$(document).ready(function () {
+$(function () {
     const loadTweets = () => {
         $.ajax({
             url: '/tweets',
             method: 'GET',
             dataType: 'json',
             success: function (data) {
-                console.log(data);
                 renderTweets(data);
             },
             error: function (err) {
@@ -17,6 +16,7 @@ $(document).ready(function () {
 
     loadTweets();
 
+    //Stops Cross-Site Scripting
     const escape = function (str) {
         let div = document.createElement("div");
         div.appendChild(document.createTextNode(str));
@@ -27,16 +27,16 @@ $(document).ready(function () {
     const createTweetElement = function (obj) {
         const formattedDate = timeago.format(obj.created_at);
 
-        const $createLocation = $('#tweets-container');
+        const $elementLocation = $('#tweets-container');
         const $article = $('<article>');
         const $header = $(`<header> <div> <p><img src="${obj.user.avatars}" alt=""> ${obj.user.name}</p><p class="handle">${obj.user.handle}</p></div></header>`);
         const $content = $(`<div><p>${escape(obj.content.text)}</p></div>`);
         const $footer = $(`<footer><div class="date need_to_be_rendered" datetime="1633639091411">${formattedDate}</div><div class="logos"><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></div></footer>`)
 
         const $articles = $article.append($header, $content, $footer);
-        const $elementCreate = $createLocation.prepend($articles);
+        const $createdElement = $elementLocation.prepend($articles);
 
-        return $elementCreate;
+        return $createdElement;
     };
 
 
@@ -49,9 +49,8 @@ $(document).ready(function () {
         }
     }
 
+    //validates form input field
     const $form = $('#new-tweet');
-
-
     $form.validate({
         rules: {
             text: {
@@ -62,15 +61,13 @@ $(document).ready(function () {
         },
         messages: {
             text: {
-                required: 'Please insert your deep thought above',
-                minlength: 'Please insert your thought above',
-                maxlength: 'This hum is too long, please shorten it!'
+                required: 'Please insert your hum above 👆',
+                minlength: 'Please insert your hum above 👆',
+                maxlength: 'This hum is too long, please shorten it! 🧐'
             },
         },
 
         submitHandler: function (form) {
-            console.log('validate');
-
             const serializedData = $(form).serialize();;
             $.post('/tweets', serializedData).then(loadTweets).then($('#tweet-text').val(''));
         }

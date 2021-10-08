@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function() {
     const tweetText = document.getElementById("tweet-text");
 
     tweetText.addEventListener("input", function () {

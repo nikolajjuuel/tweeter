@@ -1,5 +1,7 @@
-article i {
-    color: #4056a1;
+article{
+    border: solid 2px black;
+    padding: 20px;
+    margin-top: 5%;
     transition: .2s;
 }
 
@@ -7,20 +9,6 @@ article:hover {
     box-shadow: 3px 3px 0px 0px #4056a1ab;
 }
 
-article i:hover {
-    color: goldenrod;
-}
-article header div p {
-    margin: 0px;
-}
-
-article{
-    border: solid 2px black;
-    padding: 20px;
-    margin-top: 5%;
-    transition: .2s;
-
-}
 article header{
     background-color: #f4f1ec;
     background-image: none;
@@ -34,12 +22,22 @@ article header div{
     justify-content: space-between;
 }
 
+article header div p {
+    margin: 0px;
+}
+
 article > div {
     border-bottom: solid 2px black;
 }
 
-.handle {
-    font-weight: 600;
+article i {
+    color: #4056a1;
+    transition: .2s;
+    margin-left: 5px;
+}
+
+article i:hover {
+    color: goldenrod;
 }
 
 footer {
@@ -49,7 +47,16 @@ footer {
     font-size: 1rem;
 }
 
+.handle {
+    font-weight: 600;
+}
+
 #tweet-text::-webkit-input-placeholder {
     color: rgba(0, 0, 0, 0.452);
     font-weight: bold;
 }
+
+#tweets-container{
+    width: 100%;
+  }
+  
