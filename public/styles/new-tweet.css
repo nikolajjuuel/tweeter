@@ -33,6 +33,10 @@ textarea {
     color: firebrick;
 }
 
+.active{
+    visibility: hidden;
+}
+
 @media only screen and (min-width: 768px) {
     main {
         width: 60%;

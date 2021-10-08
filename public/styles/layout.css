@@ -52,9 +52,3 @@ body h1,h2,h3,h4,p,label,textarea{
 #tweets-container{
   width: 100%;
 }
-
-@media only screen and (min-device-width: 768px) {
-  main{
- 
-  }
-}

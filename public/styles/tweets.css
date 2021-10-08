@@ -48,3 +48,8 @@ footer {
     margin-top: 10px;
     font-size: 1rem;
 }
+
+#tweet-text::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.452);
+    font-weight: bold;
+}
